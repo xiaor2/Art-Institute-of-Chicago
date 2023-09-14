@@ -49,34 +49,40 @@ function Layout() {
         style={{ color: "white" }}
       >
         <Container>
-          <Navbar.Brand style={{
-                  color: "white",
-                }}>Art Institute of Chicago</Navbar.Brand>
+          <Navbar.Brand
+            style={{
+              color: "white",
+            }}
+          >
+            Art Institute of Chicago
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Link
-                to="/"
-                style={{
-                  marginLeft: "1rem",
-                  textDecoration: "none",
-                  color: "white",
-                  fontWeight: "500"
-                }}
-              >
-                Search
-              </Link>
-              <Link
-                to="/gallery"
-                style={{
-                  marginLeft: "1rem",
-                  textDecoration: "none",
-                  color: "white",
-                  fontWeight: "500"
-                }}
-              >
-                Gallery
-              </Link>
+              <Nav.Link>
+                <Link
+                  to="/"
+                  style={{
+                    textDecoration: "none",
+                    color: "white",
+                    fontWeight: "500",
+                  }}
+                >
+                  Search
+                </Link>
+              </Nav.Link>
+              <Nav.Link>
+                <Link
+                  to="/gallery"
+                  style={{
+                    textDecoration: "none",
+                    color: "white",
+                    fontWeight: "500",
+                  }}
+                >
+                  Gallery
+                </Link>
+              </Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
@@ -107,6 +113,7 @@ class ListView extends React.Component<any> {
       .then((response) => {
         let filteredArtworks = response.data.data.filter((post: any) => {
           if (post.image_id != null) {
+            console.log(post)
             return post;
           }
           return null;
@@ -225,8 +232,8 @@ class ListView extends React.Component<any> {
                   onClick={() => this.props.setUrl(post.id)}
                 >
                   <Row>
-                    <Col xs={0} sm={3} />
-                    <Col xs={12} sm={6}>
+                    <Col xs={0} md={3} lg={4} />
+                    <Col xs={12} md={6} lg={4} >
                       <Card
                         style={{
                           maxWidth: "100%",
@@ -241,14 +248,13 @@ class ListView extends React.Component<any> {
                             "/full/843,/0/default.jpg"
                           }
                         />
-
                         <Card.Body>
                           <Card.Title>{post.title}</Card.Title>
                           <Card.Text>ID: {post.id}</Card.Text>
                         </Card.Body>
                       </Card>
                     </Col>
-                    <Col xs={0} sm={3} />
+                    <Col xs={0} md={3} lg={4}/>
                   </Row>
                 </Link>
               ))}
