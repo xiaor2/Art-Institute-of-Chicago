@@ -49,12 +49,34 @@ function Layout() {
         style={{ color: "white" }}
       >
         <Container>
-          <Navbar.Brand>Art Institute of Chicago</Navbar.Brand>
+          <Navbar.Brand style={{
+                  color: "white",
+                }}>Art Institute of Chicago</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="/">Search</Nav.Link>
-              <Nav.Link href="/gallery">Gallery</Nav.Link>
+              <Link
+                to="/"
+                style={{
+                  marginLeft: "1rem",
+                  textDecoration: "none",
+                  color: "white",
+                  fontWeight: "500"
+                }}
+              >
+                Search
+              </Link>
+              <Link
+                to="/gallery"
+                style={{
+                  marginLeft: "1rem",
+                  textDecoration: "none",
+                  color: "white",
+                  fontWeight: "500"
+                }}
+              >
+                Gallery
+              </Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
@@ -102,14 +124,14 @@ class ListView extends React.Component<any> {
       <div className="App">
         <Container fluid>
           <Row style={{ marginTop: "70px" }}>
-            <Col xs={0} sm={4} xl={5}/>
+            <Col xs={0} sm={4} xl={5} />
             <Col xs={12} sm={4} xl={2}>
               <Image
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Art_Institute_of_Chicago_logo.svg/1200px-Art_Institute_of_Chicago_logo.svg.png"
                 fluid
               />
             </Col>
-            <Col xs={0} sm={4} xl={5}/>
+            <Col xs={0} sm={4} xl={5} />
           </Row>
           <div
             style={{ marginLeft: "10%", marginRight: "10%", marginTop: "1rem" }}
@@ -270,22 +292,26 @@ class Gallery extends React.Component<any> {
 
   render() {
     return (
-      <Container style={{marginTop: "70px"}}>
+      <Container style={{ marginTop: "70px" }}>
         <Row>
-          <Col xs={0} sm={3}/>
-          <Col xs={12} sm={6}><Form.Select
-          aria-label="Default select example"
-          onChange={(event) => this.setState({ type: event.target.value })}
-        >
-          <option value="All">All</option>
-          <option value="Print">Print</option>
-          <option value="Painting">Painting</option>
-          <option value="Textile">Textile</option>
-          <option value="Photograph">Photograph</option>
-          <option value="Sculpture">Sculpture</option>
-          <option value="Drawing and Watercolor">Drawing and Watercolor</option>
-        </Form.Select></Col>
-        <Col xs={0} sm={3}/>
+          <Col xs={0} sm={3} />
+          <Col xs={12} sm={6}>
+            <Form.Select
+              aria-label="Default select example"
+              onChange={(event) => this.setState({ type: event.target.value })}
+            >
+              <option value="All">All</option>
+              <option value="Print">Print</option>
+              <option value="Painting">Painting</option>
+              <option value="Textile">Textile</option>
+              <option value="Photograph">Photograph</option>
+              <option value="Sculpture">Sculpture</option>
+              <option value="Drawing and Watercolor">
+                Drawing and Watercolor
+              </option>
+            </Form.Select>
+          </Col>
+          <Col xs={0} sm={3} />
         </Row>
         <div className="gallery">
           {this.state.artworks
@@ -318,7 +344,7 @@ class Gallery extends React.Component<any> {
               </Link>
             ))}
         </div>
-        </Container>
+      </Container>
     );
   }
 }
