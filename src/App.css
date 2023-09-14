@@ -1,0 +1,170 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+.body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
+.searchTerm {
+  width: 100%;
+  border: 3px solid #948B89;
+  border-right: none;
+  padding: 5px;
+  height: 20px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #DDE0BD;
+}
+
+.searchTerm:focus{
+  color: #726E75;
+}
+
+.searchButton {
+  width: 40px;
+  height: 36px;
+  border: 1px solid #948B89;
+  background: #948B89;
+  text-align: center;
+  color: #948B89;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+  width: 30%;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.searchResult {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  margin: 10px;
+}
+
+.box {
+  padding: 0 10px;
+  border: 2px solid rgb(124, 124, 124);
+  margin: 5px 5px;
+  text-align: center;
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.box p {
+  margin: 10px;
+}
+
+.panel {
+  padding: 0 100px;
+  padding-top: 25px;
+}
+
+.gallery {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pic {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  margin: 10px;
+}
+
+.heading {
+  margin: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.type {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 0 100px;
+  padding-bottom: 20px;
+}
+
+.btn{
+  margin: 0 5px;
+}
+
+.my-box {
+  text-decoration: none;
+  color: #000;
+  width: 800px;
+  background-color: #e3d5ca;
+}
+
+.my-box:hover {
+  color: #000;
+  background-color: #edede9;
+}
+
+.card {
+  width: 800px;
+}
+
+.list-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.myNav {
+  background-color: #d5bdaf;
+  font-size: large;
+  font-weight: bold;
+}
+
+.btn {
+  background-color: #dda15e;
+}
+
+.detail-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #e3d5ca;
+  position: relative;
+  top: 200px;
+  width: 60%;
+  transform: translate(35%, 0);
+  padding: 100px;
+}
+
+.btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
